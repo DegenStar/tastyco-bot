@@ -165,16 +165,6 @@ For safer local use, keep sensitive configuration outside version control and co
 
 Contributions are welcome when they improve reliability, readability, documentation, or responsible account handling. Before opening a pull request, test changes locally, keep secrets out of commits, explain the behavioral impact, and update this README when configuration or execution steps change.
 
-## Related Work
-
-The repository is maintained under the **[yukiasuna15 GitHub profile](https://github.com/yukiasuna15)**. Other public projects from the same profile include:
-
-| Project | Description |
-|---|---|
-| [`mahiru-overpowered`](https://github.com/yukiasuna15/mahiru-overpowered) | Multi-platform automation toolkit. |
-| [`Sphere-Quest`](https://github.com/yukiasuna15/Sphere-Quest) | Daily check-in automation with multi-account and proxy support. |
-| [`SkillOpt`](https://github.com/yukiasuna15/SkillOpt) | A text-space optimizer for reusable natural-language skills. |
-
 ## Support
 
 For bugs or documentation issues, please open a [GitHub Issue](https://github.com/yukiasuna15/tasty/issues) with a minimal reproducible description. Do not include credentials, private keys, tokens, proxy passwords, or other sensitive data in the issue.
