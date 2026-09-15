@@ -11,7 +11,7 @@
 </div>
 
 ![TastyCo 官网首页](pic/web.png)
-🔗 官网：https://tastyco.io/
+官网：🔗https://tastyco.io/
 
 ## 📖 项目简介
 
@@ -262,11 +262,3 @@ uv export --locked --no-dev --format requirements-txt --output-file requirements
 本仓库目前尚未指定许可证。在添加许可证之前，源代码应视为**保留所有权利**，不得在适用权限范围之外重新分发或复用。
 
 ---
-
-<div align="center">
-
-由 [@yukiasuna15](https://github.com/yukiasuna15) 维护
-
-[查看仓库](https://github.com/yukiasuna15/tasty) · [提交问题](https://github.com/yukiasuna15/tasty/issues)
-
-</div>
