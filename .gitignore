@@ -42,3 +42,13 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+
+# Local credentials (legacy tracked files are not protected by these rules)
+accounts.txt
+sctg.txt
+captcha_key.txt
+proxy.txt
+
+# Keep the committed config templates visible; replace their placeholders locally.
+config/*.txt
+!config/*.txt
