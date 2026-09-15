@@ -58,9 +58,6 @@
 ## 🌿 环境要求
 
 开始之前，请确保运行本项目的计算机满足以下条件：
-
-- [uv](https://docs.astral.sh/uv/getting-started/installation/)。
-- Python 3.10 或更高版本；项目默认选择 3.12，uv 可在需要时自动下载解释器。
 - 用于测试和运行的已授权 EVM 钱包账户。
 - 已在本地配置有效的验证码识别服务凭据。
 - 可选的 HTTP、HTTPS、SOCKS4 或 SOCKS5 代理。
