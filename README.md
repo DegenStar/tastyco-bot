@@ -86,13 +86,13 @@ cd tasty
 ### 2. 安装依赖/同步环境
 
 ```bash
-# macOS / Linux / WSL
+# For macOS / Linux / WSL
 ./install.sh
 uv sync --locked
 ```
 
 ```powershell
-# Windows：以管理员身份运行 PowerShell
+# For Windows：以管理员身份运行 PowerShell
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 uv sync --locked
 ```
@@ -103,7 +103,7 @@ uv 会创建项目独立的 `.venv`，无需手动激活；Windows、macOS 和 L
 
 程序默认从项目根目录下的 `config/` 读取配置，文件使用 UTF-8 编码。也可以通过 `--config-dir` 指定其他配置目录。`config/` 中的模板会被 Git 跟踪，真实私钥、验证码密钥和代理凭据请改放到仓库外的目录，再将该目录传给 `--config-dir`，或在提交前确保没有真实机密。
 
-### `accounts.txt`
+### - `accounts.txt`
 
 每行添加一个已授权的 EVM 私钥：
 
@@ -113,7 +113,7 @@ uv 会创建项目独立的 `.venv`，无需手动激活；Windows、macOS 和 L
 ...
 ```
 
-### `sctg.txt`
+### - `sctg.txt`
 
 脚本会将第一行读取为验证码识别服务的 API 密钥：
 
@@ -139,7 +139,7 @@ $env:TASTYCO_CAPTCHA_KEY = "YOUR_CAPTCHA_SOLVER_API_KEY"  # Windows PowerShell
 
 程序不会自动加载 `.env` 文件。请确认 API Key 对 Turnstile 任务有效，并妥善保管，不要提交到 Git、截图、日志或问题反馈中。
 
-### `config/useragent.txt`
+### - `useragent.txt`
 
 每行添加一个浏览器 User-Agent 字符串。脚本会去除行首空白，接受以 `Mozilla/5.0` 开头的条目，并自动去重；因此也兼容包含缩进 UA 字段的浏览器画像资料：
 
@@ -175,7 +175,7 @@ Windows PowerShell 可使用：
 
 列表为空或没有有效条目时，程序会在发起网络请求前报错退出。
 
-### `proxy.txt`（可选）
+### - `proxy.txt`（可选）
 
 该文件每行接受一个代理地址。协议方案可省略；省略时，脚本默认使用 HTTP：
 
@@ -224,7 +224,7 @@ uv run --locked bot.py --proxy --rotate-proxy
 
 `--once` 成功退出码为 0，配置无效或账户处理失败为 1，命令参数错误为 2，Ctrl+C 中断为 130。需要手动完成或尚不符合条件的任务属于正常跳过。单个账户或单条任务数据出错时，会继续处理其余项目。网络请求有超时；Ctrl+C 时正在执行的线程请求可能需要等到请求结束或超时。
 
-## 开发与验证
+## 🛠 开发与验证
 
 ```bash
 uv sync --locked
@@ -241,27 +241,23 @@ uv run --locked ruff format --check .
 uv export --locked --no-dev --format requirements-txt --output-file requirements.txt
 ```
 
-## 运行说明
+## 🔄️ 运行说明
 
 机器人使用已配置的钱包签署身份验证消息，并向 TastyCo API 发送请求。连接 Telegram 机器人或邀请真实用户等需要外部操作的任务类型，可能仍需手动完成。网络故障、无效凭据、令牌过期、任务不可用及验证码识别服务错误，都可能导致账户无法完成处理周期。
 
 请勿使用本机器人操作您不拥有或未获明确授权管理的账户。请勿在议题、拉取请求、截图或聊天消息中分享终端输出、私钥、API 密钥、访问令牌、刷新令牌或包含身份验证信息的代理 URL。
 
-## 安全
+## 🛡 安全
 
 本仓库是公开仓库。**切勿将真实私钥、验证码服务凭据、代理密码、访问令牌或其他机密信息放入 Git 跟踪的文件中。** 如果曾经提交过任何机密信息，请立即撤销或轮换；在后续提交中删除文件并不会将其从 Git 历史记录中移除。
 
 请使用 `config/` 或仓库外的配置目录，API 密钥也可通过环境变量提供。程序不会记录私钥解析错误的原始内容、HTTP 错误响应正文或网络异常中的完整请求 URL；访问令牌仅保留在进程内存中。
 
-## 参与贡献
+## 🎗️ 参与贡献
 
 欢迎提交能够提升可靠性、可读性、文档质量或账户操作规范性的贡献。创建拉取请求前，请先在本地测试改动，确保提交中不含机密信息，说明行为变化的影响，并在配置或运行步骤发生变化时同步更新本 README。
 
-## 支持
-
-如需报告程序错误或文档问题，请创建 [GitHub Issue](https://github.com/yukiasuna15/tasty/issues)，并提供最小可复现说明。请勿在议题中包含凭据、私钥、令牌、代理密码或其他敏感数据。
-
-## 许可证
+## 📋 许可证
 
 本仓库目前尚未指定许可证。在添加许可证之前，源代码应视为**保留所有权利**，不得在适用权限范围之外重新分发或复用。
 
